@@ -32,7 +32,7 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_route_table" "routetable" {
     count = 2
     vpc_id = aws_vpc.new_vpc.id
-    routes {
+    route {
         cidr_block = "0.0.0.0/0"
         gateway_id = aws_internet_gateway.igw.id
     }
